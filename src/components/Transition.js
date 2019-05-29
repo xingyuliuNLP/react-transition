@@ -16,6 +16,7 @@ class TransitionComp extends Component {
       <div>
         <Transition
           in={this.state.show}
+          
           timeout={1000}
           mountOnEnter
           unmountOnExit>
