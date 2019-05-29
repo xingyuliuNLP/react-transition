@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import './css/App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// COMPONENTS
+import CSStransition from './components/CSStransition';
+import Tgroup from './components/tgroup';
+import TransitionComp from './components/Transition';
+
+const App = () => {
+  return(
+    <BrowserRouter>
+      <div>
+        <div className="anim_index">
+          <Link to="/transition">Transition</Link>
+          <Link to="/csstransition">CSStransition</Link>
+          <Link to="/tgroup">Transitions group</Link>
+        </div>
+        <Route path="/transition" component={TransitionComp}></Route>
+        <Route path="/csstransition" component={CSStransition}></Route>
+        <Route path="/tgroup" component={Tgroup}></Route>
+      </div>
+    </BrowserRouter>
+  )
 }
 
 export default App;
